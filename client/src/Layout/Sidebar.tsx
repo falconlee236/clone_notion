@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 function Sidebar() {
-  return <Sidebarstyle>this is Sidebar</Sidebarstyle>;
+  return <SidebarDiv>this is Sidebar</SidebarDiv>;
 }
 
 export default Sidebar;
 
-const Sidebarstyle = styled.div`
+const SidebarDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;

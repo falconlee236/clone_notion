@@ -12,7 +12,6 @@ const ContentsDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  border: solid 1px red;
   height: 100vh;
   width: 84.5vw;
 `;
