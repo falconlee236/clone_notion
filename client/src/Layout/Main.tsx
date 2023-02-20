@@ -1,12 +1,16 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import Contents from './Contents';
 import Sidebar from './Sidebar';
 
 function Main() {
+  const [open, setOpen] = useState<boolean>(true);
+  const onClick = () => setOpen(!open);
+
   return (
     <MainDiv>
-      <Sidebar />
-      <Contents />
+      <Sidebar openState={{ open, onClick }} />
+      <Contents openState={{ open, onClick }} />
     </MainDiv>
   );
 }
