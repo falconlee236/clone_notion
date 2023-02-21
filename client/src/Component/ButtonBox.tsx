@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { OpenStateProps } from './Topbar';
 
-interface ButtonBoxProps {
+interface ButtonBoxProps extends OpenStateProps {
   children: React.ReactNode;
 }
 
-export default function ButtonBox({ children }: ButtonBoxProps) {
-  return <ButtonBoxDiv>{children}</ButtonBoxDiv>;
+export default function ButtonBox({ openState, children }: ButtonBoxProps) {
+  return <ButtonBoxDiv onClick={openState.onClick}>{children}</ButtonBoxDiv>;
 }
 
 const ButtonBoxDiv = styled.div`

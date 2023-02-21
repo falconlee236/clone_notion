@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ArrowRightFillIcon from 'remixicon-react/ArrowRightFillIcon';
+import { AiOutlineDoubleRight } from 'react-icons/ai';
 import ButtonBox from './ButtonBox';
 
 export interface OpenStateProps {
@@ -18,11 +18,8 @@ export default function Topbar({ openState }: OpenStateProps) {
 
   return (
     <TopbarDiv isOpen={openState.open}>
-      <ButtonBox>
-        <ArrowRightFillIcon
-          onClick={openState.onClick}
-          display={openState.open ? 'none' : 'block'}
-        />
+      <ButtonBox openState={openState}>
+        <AiOutlineDoubleRight display={openState.open ? 'none' : 'block'} />
       </ButtonBox>
     </TopbarDiv>
   );

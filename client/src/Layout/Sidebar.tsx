@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ArrowLeftFillIcon from 'remixicon-react/ArrowLeftFillIcon';
+import { AiOutlineDoubleLeft } from 'react-icons/ai';
 import ButtonBox from '../Component/ButtonBox';
 
 interface SidebarProps {
@@ -12,8 +12,8 @@ interface SidebarProps {
 export default function Sidebar({ openState }: SidebarProps) {
   return (
     <SidebarDiv isOpen={openState.open}>
-      <ButtonBox>
-        <ArrowLeftFillIcon onClick={openState.onClick} />
+      <ButtonBox openState={openState}>
+        <AiOutlineDoubleLeft />
       </ButtonBox>
     </SidebarDiv>
   );
