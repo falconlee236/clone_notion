@@ -12,8 +12,8 @@
 */build
 
 # syntax
-clone_notion/client/.eslintrc.js
-clone_notion/client/.prettierrc
+*/.eslintrc.js
+*/.prettierrc
 
 # misc
 */.DS_Store
