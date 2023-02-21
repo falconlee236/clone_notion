@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import Contents from './Contents';
 import Sidebar from './Sidebar';
 
-function Main() {
+export default function Main() {
   const [open, setOpen] = useState<boolean>(false);
   const onClick = () => setOpen(!open);
-
   return (
     <MainDiv>
       <Sidebar openState={{ open, onClick }} />
@@ -14,8 +13,6 @@ function Main() {
     </MainDiv>
   );
 }
-
-export default Main;
 
 const MainDiv = styled.div`
   display: flex;

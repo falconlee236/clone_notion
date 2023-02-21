@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 import Topbar, { OpenStateProps } from '../Component/Topbar';
 
-function Contents({ openState }: OpenStateProps) {
+export default function Contents({ openState }: OpenStateProps) {
   return (
     <ContentsDiv isOpen={openState.open}>
       <Topbar openState={openState} />
     </ContentsDiv>
   );
 }
-
-export default Contents;
 
 const ContentsDiv = styled.div<{ isOpen: boolean }>`
   display: flex;

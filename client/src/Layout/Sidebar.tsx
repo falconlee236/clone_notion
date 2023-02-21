@@ -9,7 +9,7 @@ interface SidebarProps {
   };
 }
 
-function Sidebar({ openState }: SidebarProps) {
+export default function Sidebar({ openState }: SidebarProps) {
   return (
     <SidebarDiv isOpen={openState.open}>
       <ButtonBox>
@@ -18,8 +18,6 @@ function Sidebar({ openState }: SidebarProps) {
     </SidebarDiv>
   );
 }
-
-export default Sidebar;
 
 const SidebarDiv = styled.div<{ isOpen: boolean }>`
   display: ${(props) => (props.isOpen ? 'flex' : 'none')};

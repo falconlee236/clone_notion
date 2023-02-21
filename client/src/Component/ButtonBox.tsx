@@ -5,11 +5,9 @@ interface ButtonBoxProps {
   children: React.ReactNode;
 }
 
-function ButtonBox({ children }: ButtonBoxProps) {
+export default function ButtonBox({ children }: ButtonBoxProps) {
   return <ButtonBoxDiv>{children}</ButtonBoxDiv>;
 }
-
-export default ButtonBox;
 
 const ButtonBoxDiv = styled.div`
   display: flex;

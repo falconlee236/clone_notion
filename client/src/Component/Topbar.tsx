@@ -9,7 +9,7 @@ export interface OpenStateProps {
   };
 }
 
-function Topbar({ openState }: OpenStateProps) {
+export default function Topbar({ openState }: OpenStateProps) {
   /*
   function newDateformat() {
     const today = new Date();
@@ -27,8 +27,6 @@ function Topbar({ openState }: OpenStateProps) {
     </TopbarDiv>
   );
 }
-
-export default Topbar;
 
 const TopbarDiv = styled.div<{ isOpen: boolean }>`
   display: flex;
