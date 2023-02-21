@@ -4,11 +4,20 @@ import { OpenStateProps } from './Topbar';
 
 interface ButtonBoxProps extends OpenStateProps {
   children: React.ReactNode;
+  validOpen?: boolean;
 }
 
-export default function ButtonBox({ openState, children }: ButtonBoxProps) {
-  return <ButtonBoxDiv onClick={openState.onClick}>{children}</ButtonBoxDiv>;
+export default function ButtonBox({
+  openState,
+  validOpen,
+  children,
+}: ButtonBoxProps) {
+  if (validOpen)
+    return <ButtonBoxDiv onClick={openState.onClick}>{children}</ButtonBoxDiv>;
+  return <ButtonBoxDiv>{children}</ButtonBoxDiv>;
 }
+
+ButtonBox.defaultProps = { validOpen: false };
 
 const ButtonBoxDiv = styled.div`
   display: flex;
@@ -17,6 +26,6 @@ const ButtonBoxDiv = styled.div`
   &:hover {
     background-color: Gainsboro;
   }
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
 `;

@@ -12,8 +12,8 @@ interface SidebarProps {
 export default function Sidebar({ openState }: SidebarProps) {
   return (
     <SidebarDiv isOpen={openState.open}>
-      <ButtonBox openState={openState}>
-        <AiOutlineDoubleLeft />
+      <ButtonBox openState={openState} validOpen>
+        <AiOutlineDoubleLeft size="20" />
       </ButtonBox>
     </SidebarDiv>
   );

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { AiOutlineDoubleRight } from 'react-icons/ai';
-import ButtonBox from './ButtonBox';
+import TopbarSidebarArrow from './TopbarSidebarArrow';
+import TopRightButtons from './TopRightButtons';
 
 export interface OpenStateProps {
   openState: {
@@ -18,9 +18,8 @@ export default function Topbar({ openState }: OpenStateProps) {
 
   return (
     <TopbarDiv isOpen={openState.open}>
-      <ButtonBox openState={openState}>
-        <AiOutlineDoubleRight display={openState.open ? 'none' : 'block'} />
-      </ButtonBox>
+      <TopbarSidebarArrow openState={openState} />
+      <TopRightButtons openState={openState} />
     </TopbarDiv>
   );
 }
