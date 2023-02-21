@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ArrowRightFillIcon from 'remixicon-react/ArrowRightFillIcon';
+import ButtonBox from '../Component/ButtonBox';
 
 interface ContentsProps {
   openState: {
@@ -11,10 +12,12 @@ interface ContentsProps {
 function Contents({ openState }: ContentsProps) {
   return (
     <ContentsDiv isOpen={openState.open}>
-      <ArrowRightFillIcon
-        onClick={openState.onClick}
-        display={openState.open ? 'none' : 'block'}
-      />
+      <ButtonBox>
+        <ArrowRightFillIcon
+          onClick={openState.onClick}
+          display={openState.open ? 'none' : 'block'}
+        />
+      </ButtonBox>
     </ContentsDiv>
   );
 }

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ArrowLeftFillIcon from 'remixicon-react/ArrowLeftFillIcon';
+import ButtonBox from '../Component/ButtonBox';
 
 interface SidebarProps {
   openState: {
@@ -11,7 +12,9 @@ interface SidebarProps {
 function Sidebar({ openState }: SidebarProps) {
   return (
     <SidebarDiv isOpen={openState.open}>
-      <ArrowLeftFillIcon onClick={openState.onClick} />
+      <ButtonBox>
+        <ArrowLeftFillIcon onClick={openState.onClick} />
+      </ButtonBox>
     </SidebarDiv>
   );
 }
