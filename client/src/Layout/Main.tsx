@@ -4,7 +4,7 @@ import Contents from './Contents';
 import Sidebar from './Sidebar';
 
 function Main() {
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
   const onClick = () => setOpen(!open);
 
   return (

@@ -1,23 +1,10 @@
 import styled from 'styled-components';
-import ArrowRightFillIcon from 'remixicon-react/ArrowRightFillIcon';
-import ButtonBox from '../Component/ButtonBox';
+import Topbar, { OpenStateProps } from '../Component/Topbar';
 
-interface ContentsProps {
-  openState: {
-    open: boolean;
-    onClick: () => void;
-  };
-}
-
-function Contents({ openState }: ContentsProps) {
+function Contents({ openState }: OpenStateProps) {
   return (
     <ContentsDiv isOpen={openState.open}>
-      <ButtonBox>
-        <ArrowRightFillIcon
-          onClick={openState.onClick}
-          display={openState.open ? 'none' : 'block'}
-        />
-      </ButtonBox>
+      <Topbar openState={openState} />
     </ContentsDiv>
   );
 }
