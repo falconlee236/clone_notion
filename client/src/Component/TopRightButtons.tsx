@@ -3,23 +3,73 @@ import { ReactElement } from 'react';
 import { AiOutlineStar } from 'react-icons/ai';
 import { RxChatBubble, RxClock, RxDotsHorizontal } from 'react-icons/rx';
 import { OpenStateProps } from './Topbar';
-import ButtonBox from './ButtonBox';
+import ButtonBox, { ButtonBoxSizeProps } from './ButtonBox';
+import TopTextToComponent from './TopTextToComponent';
 
 export default function TopRightButtons({ openState }: OpenStateProps) {
   return (
     <TopRightButtonDiv>
-      {rightButtons.map((icon) => (
-        <ButtonBox openState={openState}>{icon}</ButtonBox>
+      {rightButtons.map((icons) => (
+        <ButtonBox openState={openState} size={icons.size}>
+          {icons.component}
+        </ButtonBox>
       ))}
     </TopRightButtonDiv>
   );
 }
 
-const rightButtons: ReactElement[] = [
-  <RxChatBubble size="20" />,
-  <RxClock size="20" />,
-  <AiOutlineStar size="20" />,
-  <RxDotsHorizontal size="20" />,
+function newDateformat() {
+  const today = new Date();
+  return `${today.getMonth()}월 ${today.getDate()}일 편집`;
+}
+
+interface rightButtonsProps extends ButtonBoxSizeProps {
+  component: ReactElement;
+}
+
+const rightButtons: rightButtonsProps[] = [
+  {
+    component: <TopTextToComponent string={newDateformat()} />,
+    size: {
+      height: 20,
+      width: 100,
+    },
+  },
+  {
+    component: <TopTextToComponent string="공유" />,
+    size: {
+      height: 20,
+      width: 20,
+    },
+  },
+  {
+    component: <RxChatBubble size="20" />,
+    size: {
+      height: 20,
+      width: 20,
+    },
+  },
+  {
+    component: <RxClock size="20" />,
+    size: {
+      height: 20,
+      width: 20,
+    },
+  },
+  {
+    component: <AiOutlineStar size="20" />,
+    size: {
+      height: 20,
+      width: 20,
+    },
+  },
+  {
+    component: <RxDotsHorizontal size="20" />,
+    size: {
+      height: 20,
+      width: 20,
+    },
+  },
 ];
 
 const TopRightButtonDiv = styled.div`

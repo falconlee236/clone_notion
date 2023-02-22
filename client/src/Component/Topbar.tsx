@@ -10,12 +10,6 @@ export interface OpenStateProps {
 }
 
 export default function Topbar({ openState }: OpenStateProps) {
-  /*
-  function newDateformat() {
-    const today = new Date();
-    return `${today.getMonth()}월 ${today.getDate()}일 편집`;
-  } */
-
   return (
     <TopbarDiv isOpen={openState.open}>
       <TopbarSidebarArrow openState={openState} />
@@ -31,5 +25,4 @@ const TopbarDiv = styled.div<{ isOpen: boolean }>`
   width: ${(props) => (props.isOpen ? '84.5vw' : '100vw')};
   height: 7vh;
   position: fixed;
-  border: solid red 2px;
 `;
