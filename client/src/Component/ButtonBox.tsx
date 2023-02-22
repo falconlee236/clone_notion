@@ -14,6 +14,17 @@ interface ButtonBoxProps extends OpenStateProps, ButtonBoxSizeProps {
   validOpen?: boolean;
 }
 
+const ButtonBoxDiv = styled.div<ButtonBoxSizeProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: Gainsboro;
+  }
+  width: ${({ size }) => `${size.width + 10}px`};
+  height: ${({ size }) => `${size.height + 10}px`};
+`;
+
 export default function ButtonBox({
   openState,
   validOpen,
@@ -30,14 +41,3 @@ export default function ButtonBox({
 }
 
 ButtonBox.defaultProps = { validOpen: false };
-
-const ButtonBoxDiv = styled.div<ButtonBoxSizeProps>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &:hover {
-    background-color: Gainsboro;
-  }
-  width: ${(p) => `${p.size.width + 10}px`};
-  height: ${(p) => `${p.size.height + 10}px`};
-`;

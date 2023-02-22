@@ -6,6 +6,19 @@ import { OpenStateProps } from './Topbar';
 import ButtonBox, { ButtonBoxSizeProps } from './ButtonBox';
 import TopTextToComponent from './TopTextToComponent';
 
+const TopRightButtonDiv = styled.div`
+  display: flex;
+`;
+
+function newDateformat() {
+  const today = new Date();
+  return `${today.getMonth()}월 ${today.getDate()}일 편집`;
+}
+
+interface rightButtonsProps extends ButtonBoxSizeProps {
+  component: ReactElement;
+}
+
 export default function TopRightButtons({ openState }: OpenStateProps) {
   return (
     <TopRightButtonDiv>
@@ -16,15 +29,6 @@ export default function TopRightButtons({ openState }: OpenStateProps) {
       ))}
     </TopRightButtonDiv>
   );
-}
-
-function newDateformat() {
-  const today = new Date();
-  return `${today.getMonth()}월 ${today.getDate()}일 편집`;
-}
-
-interface rightButtonsProps extends ButtonBoxSizeProps {
-  component: ReactElement;
 }
 
 const rightButtons: rightButtonsProps[] = [
@@ -71,7 +75,3 @@ const rightButtons: rightButtonsProps[] = [
     },
   },
 ];
-
-const TopRightButtonDiv = styled.div`
-  display: flex;
-`;

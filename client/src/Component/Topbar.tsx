@@ -9,15 +9,6 @@ export interface OpenStateProps {
   };
 }
 
-export default function Topbar({ openState }: OpenStateProps) {
-  return (
-    <TopbarDiv isOpen={openState.open}>
-      <TopbarSidebarArrow openState={openState} />
-      <TopRightButtons openState={openState} />
-    </TopbarDiv>
-  );
-}
-
 const TopbarDiv = styled.div<{ isOpen: boolean }>`
   display: flex;
   justify-content: space-between;
@@ -26,3 +17,12 @@ const TopbarDiv = styled.div<{ isOpen: boolean }>`
   height: 7vh;
   position: fixed;
 `;
+
+export default function Topbar({ openState }: OpenStateProps) {
+  return (
+    <TopbarDiv isOpen={openState.open}>
+      <TopbarSidebarArrow openState={openState} />
+      <TopRightButtons openState={openState} />
+    </TopbarDiv>
+  );
+}

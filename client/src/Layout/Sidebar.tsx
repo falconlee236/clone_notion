@@ -9,6 +9,15 @@ interface SidebarProps {
   };
 }
 
+const SidebarDiv = styled.div<{ isOpen: boolean }>`
+  display: ${(props) => (props.isOpen ? 'flex' : 'none')};
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(251 251 250);
+  height: 100vh;
+  width: 15.5vw;
+`;
+
 export default function Sidebar({ openState }: SidebarProps) {
   const iconSize: ButtonBoxSizeProps = {
     size: {
@@ -24,12 +33,3 @@ export default function Sidebar({ openState }: SidebarProps) {
     </SidebarDiv>
   );
 }
-
-const SidebarDiv = styled.div<{ isOpen: boolean }>`
-  display: ${(props) => (props.isOpen ? 'flex' : 'none')};
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: rgb(251 251 250);
-  height: 100vh;
-  width: 15.5vw;
-`;
