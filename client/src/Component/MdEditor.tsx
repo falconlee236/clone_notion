@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import MDEditor from '@uiw/react-md-editor';
+import { OpenStateProps } from './Topbar';
 
-export default function MdEditor() {
+export default function MdEditor({ openState }: OpenStateProps) {
   const [value, setValue] = useState<string | undefined>();
   return (
     <MdEditorDiv data-color-mode="light">
@@ -10,7 +11,9 @@ export default function MdEditor() {
         value={value}
         onChange={(val) => setValue(val)}
         preview="edit"
-        height={700}
+        height={750}
+        maxHeight={750}
+        style={{ width: openState.open ? '80vw' : '100vw' }}
       />
     </MdEditorDiv>
   );
@@ -18,12 +21,12 @@ export default function MdEditor() {
 
 const MdEditorDiv = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  height: 93vh;
+  height: 100%;
   width: 100%;
-  position: fixed;
-  top: 7vh;
 `;
 
 // <MDEditor.Markdown source={value} style={{ whiteSpace: 'pre-wrap' }} />
+//        style={{ width: openState.open ? '93vw' : '100vw' }}

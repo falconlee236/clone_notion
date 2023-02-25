@@ -9,11 +9,6 @@ const TopbarSidebarArrowDiv = styled.div<{ isOpen: boolean }>`
   box-sizing: content-box;
   height: 20px;
   width: 20px;
-  /*
-  &.hover {
-    animation-delay: 0.1ms;
-  }
-  */
 `;
 
 export default function TopbarSidebarArrow({ openState }: OpenStateProps) {
@@ -24,7 +19,11 @@ export default function TopbarSidebarArrow({ openState }: OpenStateProps) {
     width: 20,
   };
   return (
-    <TopbarSidebarArrowDiv onMouseEnter={changeHover} isOpen={openState.open}>
+    <TopbarSidebarArrowDiv
+      onMouseEnter={changeHover}
+      onMouseOut={changeHover}
+      isOpen={openState.open}
+    >
       <ButtonBox openState={openState} validOpen size={iconSize}>
         {hover ? (
           <AiOutlineMenu size="20" />

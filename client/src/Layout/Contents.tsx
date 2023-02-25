@@ -7,7 +7,7 @@ export default function Contents({ openState }: OpenStateProps) {
   return (
     <ContentsDiv isOpen={openState.open}>
       <Topbar openState={openState} />
-      <MdEditor />
+      <MdEditor openState={openState} />
     </ContentsDiv>
   );
 }
