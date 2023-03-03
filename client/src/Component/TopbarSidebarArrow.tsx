@@ -5,10 +5,13 @@ import ButtonBox from './ButtonBox';
 import { OpenStateProps } from './Topbar';
 
 const TopbarSidebarArrowDiv = styled.div<{ isOpen: boolean }>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   visibility: ${(p) => (p.isOpen ? 'hidden' : 'visibilty')};
   box-sizing: content-box;
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
 `;
 
 export default function TopbarSidebarArrow({ openState }: OpenStateProps) {
@@ -21,7 +24,7 @@ export default function TopbarSidebarArrow({ openState }: OpenStateProps) {
   return (
     <TopbarSidebarArrowDiv
       onMouseEnter={changeHover}
-      onMouseOut={changeHover}
+      onMouseLeave={changeHover}
       isOpen={openState.open}
     >
       <ButtonBox openState={openState} validOpen size={iconSize}>
@@ -34,3 +37,13 @@ export default function TopbarSidebarArrow({ openState }: OpenStateProps) {
     </TopbarSidebarArrowDiv>
   );
 }
+
+/*
+<ButtonBox openState={openState} validOpen size={iconSize}>
+        {hover ? (
+          <AiOutlineMenu size="20" />
+        ) : (
+          <AiOutlineDoubleRight size="20" />
+        )}
+      </ButtonBox>
+*/

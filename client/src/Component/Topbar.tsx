@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import TopbarSidebarArrow from './TopbarSidebarArrow';
+import TopLeftButtons from './TopLeftButtons';
 import TopRightButtons from './TopRightButtons';
 
 export interface OpenStateProps {
@@ -21,7 +21,7 @@ const TopbarDiv = styled.div<{ isOpen: boolean }>`
 export default function Topbar({ openState }: OpenStateProps) {
   return (
     <TopbarDiv isOpen={openState.open}>
-      <TopbarSidebarArrow openState={openState} />
+      <TopLeftButtons openState={openState} />
       <TopRightButtons openState={openState} />
     </TopbarDiv>
   );
