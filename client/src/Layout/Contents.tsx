@@ -20,4 +20,5 @@ const ContentsDiv = styled.div<{ isOpen: boolean }>`
   background-color: white;
   height: 100vh;
   width: ${(props) => (props.isOpen ? '84.5vw' : '100vw')};
+  direction: static;
 `;

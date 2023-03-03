@@ -13,7 +13,10 @@ export default function MdEditor({ openState }: OpenStateProps) {
         preview="edit"
         height={750}
         maxHeight={750}
-        style={{ width: openState.open ? '80vw' : '100vw' }}
+        style={{
+          width: openState.open ? '80vw' : '100vw',
+          position: 'relative',
+        }}
       />
     </MdEditorDiv>
   );

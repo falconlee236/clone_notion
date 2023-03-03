@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { OpenStateProps } from './Topbar';
 import TopTextToComponent from './TopTextToComponent';
+import TopbarTitleInside from './TopbarTitleInside';
 import ButtonBox from './ButtonBox';
 
 export default function TopbarTitle({ openState }: OpenStateProps) {
@@ -20,7 +21,7 @@ export default function TopbarTitle({ openState }: OpenStateProps) {
           <TopTextToComponent string="빠른메모" />
         </ButtonBox>
       </PageTitlePopup>
-      {titleOpen ? <PopupDiv>hello</PopupDiv> : null}
+      {titleOpen ? <TopbarTitleInside /> : null}
     </div>
   );
 }
@@ -29,12 +30,4 @@ const PageTitlePopup = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const PopupDiv = styled.div`
-  position: absolute;
-  top: 30px;
-  height: 30px;
-  width: 30px;
-  background-color: red;
 `;
